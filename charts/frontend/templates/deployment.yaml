@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{.Chart.Name}}
+  labels:
+    app: {{.Chart.Name}}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{.Chart.Name}}
+  template:
+    metadata:
+      labels:
+        app: {{.Chart.Name}}
+    spec:
+      containers:
+        - image: ghcr.io/openzipkin/brave-example:armeria
+          imagePullPolicy: Always
+          name: {{.Chart.Name}}
+          env:
+            - name: ZIPKIN_BASEURL
+              value: "http://{{.Values.global.zipkinHostPort}}"
+          command: ["start-frontend"]
+          ports:
+            - containerPort: 8081

@@ -1,0 +1,5 @@
+zipkin:
+  fullnameOverride: "zipkin"
+
+global:
+  zipkinHostPort: "zipkin:9411"
