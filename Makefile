@@ -1,5 +1,5 @@
 NAMESPACE?=zipkin-example
-CHART_NAME=zipkin-k8-example
+CHART_NAME=zipkin-example
 
 deps:
 	helm dependency update

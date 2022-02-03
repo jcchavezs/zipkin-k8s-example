@@ -1,5 +1,5 @@
 apiVersion: v2
-name: zipkin-k8s-example
+name: zipkin-example
 description: A Helm chart for deploying zipkin-example in Kubernetes
 
 # A chart can be either an 'application' or a 'library' chart.
